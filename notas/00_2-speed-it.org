@@ -16,6 +16,8 @@
 #+REVEAL_PLUGINS: (notes)
 :END:
 
+![Ahora](https://i.imgur.com/Nlp8LgN.png)
+
 * Introducción
 ** Fuerzas de la Era digital
 - Mundo hiperconectado
