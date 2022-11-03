@@ -222,6 +222,14 @@ db.restaurants.find(
 );
 #+end_src
 
+Alternativamente:
+
+#+begin_src js
+db.restaurants.find(
+	{$or:[{borough: 'Brooklyn'},{borough: 'Staten Island'},{borough: 	'Queens'}]},{"restaurant_id":1,"name":1,"borough":1,"cuisine":1}
+);
+#+end_src
+
 19. Escribe una función find() para encontrar el ID del restaurante, el nombre, el municipio y la cocina de aquellos restaurantes que no pertenecen al municipio de Staten Island o Queens o Bronxor Brooklyn.
 
 #+begin_src js
