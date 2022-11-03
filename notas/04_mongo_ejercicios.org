@@ -299,6 +299,12 @@ db.restaurants.find(
 );
 #+end_src
 
+¿Alternativamente?
+
+#+begin_src js
+db.restaurants.find({$or:[{"cuisine":{$nin:["American ","Chinese"]}},{"name":/^Wil/}]}, { "restaurant_id": 1, "name": 1, "borough": 1, "cuisine":1})
+#+end_src
+
 22. Escribe una función find() para encontrar el ID del restaurante, el nombre y las calificaciones de los restaurantes que obtuvieron una calificación de "A" y obtuvieron una puntuación de 11 en un ISODate "2014-08-11T00: 00: 00Z" entre muchas de las fechas de la encuesta. .
 
 #+begin_src js
