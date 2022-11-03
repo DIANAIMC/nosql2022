@@ -324,6 +324,13 @@ db.restaurants.find(
 
 *👀OJO👀*: Aquí la palabra clave es _"entre muchas de las fechas de la encuesta"_, porque implica el comportamiento esperado de los queries sobre los arrays, en donde todos sus elementos deben de ayudar a cumplir todas las condiciones. En este caso, entre todos los grades deben ayudar a cumplir el criterio de 1) fecha del 11 de Agosto de 2014, 2) grade = A, y 3) score = 11.
 
+Alternativamente, si se quisiera cumplir las 3 condiciones en un mismo grades, entonces sería así:
+
+
+#+begin_src js
+db.restaurants.find({"grades":{$elemMatch:{"grade":'A',"score" : 11, "date": ISODate("2014-08-11T00:00:00Z")}}},{"restaurant_i":1,"name":1,"grades":1})
+#+end_src
+
 23. Escribe una función find() para encontrar el ID del restaurante, el nombre y las calificaciones de aquellos restaurantes donde el segundo elemento de la matriz de calificaciones contiene una calificación de "A" y una puntuación de 9 en un ISODate "2014-08-11T00: 00: 00Z".
 
 #+begin_src js
